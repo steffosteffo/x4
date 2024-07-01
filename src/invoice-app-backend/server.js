@@ -81,7 +81,8 @@ app.get('/4', (req, res) => {
 app.use('/api/products', require('./routes/products'));
 app.use('/api/customers', require('./routes/customers'));
 app.use('/api/invoices', require('./routes/invoices'));
-app.use('/api/userss', require('./routes/users'));
+app.use('/api/anames', require('./routes/anames'));
+//app.use('/api/userss', require('./routes/users'));
 
 // Define your route to fetch all customers
 /*
