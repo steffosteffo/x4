@@ -20,7 +20,7 @@ function App() {
         event.preventDefault();
         // Perform the PUT request to update antal before the window closes
         if (loggedInUser) {
-          axios.put(`http://localhost:3000/api/anames/${loggedInUser._id}`, {
+          axios.put(`http://localhost:5000/api/anames/${loggedInUser._id}`, {
             steffoname: loggedInUser.steffoname,
             alosen: loggedInUser.alosen,
             antal: 0
