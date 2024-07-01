@@ -33,7 +33,7 @@ function LoginForm({ onLogin, onLogout }) {
         }
 
         // Make the PUT request to the backend to update the user's `antal` status
-        const response = await axios.put(`http://localhost:3000/api/anames/${user._id}`, {
+        const response = await axios.put(`http://localhost:5000/api/anames/${user._id}`, {
           steffoname: user.steffoname,
           alosen: user.alosen,
           antal: 1
