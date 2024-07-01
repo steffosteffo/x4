@@ -11,8 +11,10 @@ function LoginForm({ onLogin, onLogout }) {
     try {
     
       console.log('Fetching users from the database...');
-      const usersResponse = await axios.get('http://localhost:5000/api/anames');
-      const users = usersResponse.data;
+     // const usersResponse = await axios.get('http://localhost:5000/api/anames');
+      const usersResponse = await axios.get('http://steffohost.hopto.org:5000/api/anames');
+      
+        const users = usersResponse.data;
       console.log('Users fetched:', users);
 
       // Check if the provided username and password match any user in the list
@@ -33,7 +35,8 @@ function LoginForm({ onLogin, onLogout }) {
         }
 
         // Make the PUT request to the backend to update the user's `antal` status
-        const response = await axios.put(`http://localhost:5000/api/anames/${user._id}`, {
+       // const response = await axios.put(`http://localhost:5000/api/anames/${user._id}`, {
+        const response = await axios.put(`http://steffohost.hopto.org:5000/api/anames/${user._id}`, {
           steffoname: user.steffoname,
           alosen: user.alosen,
           antal: 1
