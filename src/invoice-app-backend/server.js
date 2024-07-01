@@ -20,6 +20,8 @@ app.use(bodyParser.json());
 
 const corsOpt = {
   origin: [
+    'http://localhost:3000/api/anames',
+    'http://localhost:5000/api/anames',
    
     'http://steffohost.hopto.org:5000/api/customers',
     'http://steffohost.hopto.org:3000/api/customers',
