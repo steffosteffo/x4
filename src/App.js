@@ -20,7 +20,7 @@ function App() {
         event.preventDefault();
         // Perform the PUT request to update antal before the window closes
         if (loggedInUser) {
-          axios.put(`http://localhost:5000/api/anames/${loggedInUser._id}`, {
+          axios.put(`http://steffohost.hopto.org:5000/api/anames/${loggedInUser._id}`, {
             steffoname: loggedInUser.steffoname,
             alosen: loggedInUser.alosen,
             antal: 0
@@ -59,14 +59,14 @@ function App() {
     console.log('---->>>> handleLogout id= >>>>>>: ' + user._id);
 
     try {
-      console.log('Sending PUT request to: http://localhost:5000/api/anames/' + user._id);
+      console.log('Sending PUT request to: http://steffohost.hopto.org:5000/api/anames/' + user._id);
       console.log('Request payload:', {
         steffoname: user.steffoname,
         alosen: user.alosen,
         antal: 0
       });
 
-      const response = await axios.put(`http://localhost:5000/api/anames/${user._id}`, {
+      const response = await axios.put(`http://steffohost.hopto.org:5000/api/anames/${user._id}`, {
         steffoname: user.steffoname,
         alosen: user.alosen,
         antal: 0
