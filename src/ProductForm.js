@@ -37,7 +37,10 @@ function ProductForm() {
     e.preventDefault();
    
     try {
-      const response = await axios.post('/api/products', product);
+     // const response = await axios.post('/api/products', product);
+     const response = await axios.post('http://steffohost.hopto.org:5000/api/products', product); //star
+     
+      
       console.log('API Response:', response.data); // Log API response
       setProduct({ productname: '', antal: '', pris: '', summa: '', moms: '1.25', tot: '' });  // Reset moms to default after submission
       alert('Product submitted successfully!');

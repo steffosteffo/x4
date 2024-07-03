@@ -64,7 +64,9 @@ function EditProductForm() {
          //   tot,
         };
 
-      await axios.put(`/api/products/${selectedProduct}`, updatedProduct);
+    //  await axios.put(`/api/products/${selectedProduct}`, updatedProduct);
+    await axios.put(`http://steffohost.hopto.org:5000/api/products/${selectedProduct}`, updatedProduct); //star
+    
       
       alert('Product updated successfully!');
     } catch (error) {
