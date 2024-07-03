@@ -70,7 +70,9 @@ function EditCustomerForm() {
        
       };
 
-      await axios.put(`/api/customers/${selectedCustomer}`, updatedCustomer);
+     // await axios.put(`/api/customers/${selectedCustomer}`, updatedCustomer);
+     await axios.put(`http://steffohost.hopto.org:5000/api/customers/${selectedCustomer}`, updatedCustomer); //star
+      
       
       alert('Customer updated successfully!');
     } catch (error) {
