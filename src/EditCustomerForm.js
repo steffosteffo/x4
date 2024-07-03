@@ -19,8 +19,10 @@ function EditCustomerForm() {
 
   const fetchCustomers= async () => {
     try {
-      const response = await axios.get('/api/customers');
+      //const response = await axios.get('/api/customers');
       // const response = await axios.get('http://localhost:5000/api/customers'); // STAR!
+      const response = await axios.get('http://steffohost.hopto.org:5000/api/customers'); // STAR!
+      
      
 
       console.log('-------------------------response from fetchCustomers: =   ' + response)

@@ -22,8 +22,11 @@ function EditProductForm() {
 
   const fetchProducts= async () => {
     try {
-      const response = await axios.get('/api/products');
+      //const response = await axios.get('/api/products');
       // const response = await axios.get('http://localhost:5000/api/products'); // STAR!
+      const response = await axios.get('http://steffohost.hopto.org:5000/api/products'); // STAR!
+
+      
      
 
       console.log('-------------------------response from fetchProducts: =   ' + response)
