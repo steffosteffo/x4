@@ -244,41 +244,44 @@ function InvoiceForm() {
               ))}
           </select>
         </div>
+   
         <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setNamn(e.target.value)}
-          placeholder="Ange Namn"
+//          type="text"
+//          id="name"
+//          value={name}
+//          onChange={(e) => setNamn(e.target.value)}
+//          placeholder="Ange Namn"
+        />
+
+        <input
+//          type="text"
+//          id="phone"
+//          value={phone}
+//          onChange={(e) => setPhone(e.target.value)}
+//          placeholder="Ange Telefon"
         />
         <input
-          type="text"
-          id="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="Ange Telefon"
+//          type="text"
+//          id="adress"
+//          value={adress}
+//          onChange={(e) => setAdress(e.target.value)}
+//          placeholder="Ange Adress"
         />
         <input
-          type="text"
-          id="adress"
-          value={adress}
-          onChange={(e) => setAdress(e.target.value)}
-          placeholder="Ange Adress"
+//          type="text"
+//          id="email"
+//         value={email}
+//          onChange={(e) => setEmail(e.target.value)}
+//          placeholder="Ange E-mejl"
         />
         <input
-          type="text"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Ange E-mejl"
+//          type="text"
+//          id="webadress"
+//          value={webadress}
+//          onChange={(e) => setWebadress(e.target.value)}
+//          placeholder="Ange Webbadress"
         />
-        <input
-          type="text"
-          id="webadress"
-          value={webadress}
-          onChange={(e) => setWebadress(e.target.value)}
-          placeholder="Ange Webbadress"
-        />
+
       </form>
 
 
@@ -300,18 +303,18 @@ function InvoiceForm() {
           </select>
         </div>
         <input
-          type="text"
-          id="productname"
-          value={productname}
-          onChange={(e) => setProductname(e.target.value)}
-          placeholder="Ange Produktnamn"
+//          type="text"
+//          id="productname"
+//          value={productname}
+//          onChange={(e) => setProductname(e.target.value)}
+//          placeholder="Ange Produktnamn"
         />
         <input
-          type="text"
-          id="pris"
-          value={pris}
-          onChange={(e) => setPris(e.target.value)}
-          placeholder="Ange Pris"
+//          type="text"
+//          id="pris"
+//          value={pris}
+//          onChange={(e) => setPris(e.target.value)}
+//          placeholder="Ange Pris"
         />
 
       </form>
