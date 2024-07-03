@@ -25,7 +25,10 @@ function CustomerForm() {
     e.preventDefault(); // tar bort html 
     try {
       // Send POST request to API to add new customer using the `customer` state
-      const response = await axios.post('/api/customers', customer);
+     // const response = await axios.post('/api/customers', customer);
+      const response = await axios.post('http://steffohost.hopto.org:5000/api/customers', customer); //star
+      
+
       console.log('Response:', response.data); // Assuming the server responds with the saved customer
       setCustomer({ name: '', phone: '', adress: '', email: '', webadress: '' }); // Clear the form after successful submission
       alert('PCustomer submitted successfully!');
