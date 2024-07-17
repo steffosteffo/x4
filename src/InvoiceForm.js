@@ -36,7 +36,7 @@ function InvoiceForm() {
   useEffect(() => {
     fetchCustomers();
     fetchProducts();
-  },[]);
+  }, []);
 
   const fetchCustomers = async () => {
     try {
@@ -45,7 +45,7 @@ function InvoiceForm() {
       const response = await axios.get('http://steffohost.hopto.org:5000/api/customers');
       setCustomers(response.data);
       setLoading(false);
-      
+
     } catch (error) {
       console.error('Error fetching customers:', error);
       setError('Error fetching products: ' + error.message);
@@ -112,7 +112,7 @@ function InvoiceForm() {
       setSelectedProduct(selected._id);
 
       //produkt drop down listan 
-      setProductname(selected.productname); 
+      setProductname(selected.productname);
       setPris(selected.pris);
 
       //Kopierar namn från drop downlistan till fälten nedanför :-) 
@@ -136,7 +136,7 @@ function InvoiceForm() {
 
   useEffect(() => {
   }, []);
- // }, [setProduct]); xyz
+  // }, [setProduct]); xyz
 
   //Moms 
   const [moms, setMoms] = useState(1.25); // Default moms value in dropdown
@@ -151,8 +151,8 @@ function InvoiceForm() {
   //Produktnamn
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-   setProduct({ ...product, [name]: value });
-   // setProduct((prevProduct) => ({ ...prevProduct, [name]: value })); //mmm
+    setProduct({ ...product, [name]: value });
+    // setProduct((prevProduct) => ({ ...prevProduct, [name]: value })); //mmm
   };
 
   const getCurrentDate = () => {
@@ -181,7 +181,7 @@ function InvoiceForm() {
 
       setMoms(1.25); /// steffo!!
       setSelectedProduct('') // Andre ;
-       
+
 
     } catch (error) {
       alert('Product submission failed!');
@@ -204,7 +204,7 @@ function InvoiceForm() {
   const totalTOT = productList.reduce((acc, item) => {
     const momsValue = parseFloat(item.moms); // Convert item.moms to a number
     const calculatedTOT = momsValue !== 0 ? (item.antal * item.pris * momsValue) : (item.antal * item.pris);
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>item.moms is now: ' + momsValue);
+    //console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>item.moms is now: ' + momsValue);
     return acc + calculatedTOT;
   }, 0);
 
@@ -228,25 +228,33 @@ function InvoiceForm() {
 
       <h2>Fakturera till Kund:</h2>
 
-      {/*<form onSubmit={handleSubmit}>*/}
-      <form >
+      <div class="container invoice">
+        {/****  PRINT*****/}
         <div>
-          <select className="form-input" value={selectedCustomer} onChange={(e) => handleSelectCustomer(e.target.value)}>
-            <option type="text" value="">Välj Kund</option>
-            {customers
-              .slice() // Create a copy of the original array to avoid mutating it
-              .sort((a, b) => {
-                if (!a.name || !b.name) return 0; // Handle cases where name is undefined or null
-                return a.name.localeCompare(b.name);
-              }) // Sort customers alphabetically by name
-              .map((customer) => (
-                <option key={customer._id} value={customer._id}>
-                  {customer.name}
-                </option>
-              ))}
-          </select>
+          <dt>&nbsp;</dt>
+          <button onClick={handlePrint} >Utskrift!  </button>
         </div>
-      {/* 
+        <br></br>
+
+        {/*<form onSubmit={handleSubmit}>*/}
+        <form >
+          <div>
+            <select className="form-input" value={selectedCustomer} onChange={(e) => handleSelectCustomer(e.target.value)}>
+              <option type="text" value="">Välj Kund</option>
+              {customers
+                .slice() // Create a copy of the original array to avoid mutating it
+                .sort((a, b) => {
+                  if (!a.name || !b.name) return 0; // Handle cases where name is undefined or null
+                  return a.name.localeCompare(b.name);
+                }) // Sort customers alphabetically by name
+                .map((customer) => (
+                  <option key={customer._id} value={customer._id}>
+                    {customer.name}
+                  </option>
+                ))}
+            </select>
+          </div>
+          {/* 
         <input
           type="text"
           id="name"
@@ -284,28 +292,28 @@ function InvoiceForm() {
           placeholder="Ange Webbadress"
         />
 */}
-      </form>
+        </form>
 
+        <br></br>
+        <form >
+          <div>
+            <select className="form-input" value={selectedProduct} onChange={(e) => handleSelectProduct(e.target.value)}>
+              <option type="text" value="">Välj Produkt</option>
+              {products
+                .slice() // Create a copy of the original array to avoid mutating it
+                .sort((a, b) => {
+                  if (!a.productname || !b.productname) return 0; // Handle cases where name is undefined or null
+                  return a.productname.localeCompare(b.productname);
+                }) // Sort customers alphabetically by name
+                .map((product) => (
+                  <option key={product._id} value={product._id}>
+                    {product.productname}
+                  </option>
+                ))}
+            </select>
+          </div>
 
-      <form >
-        <div>
-          <select className="form-input" value={selectedProduct} onChange={(e) => handleSelectProduct(e.target.value)}>
-            <option type="text" value="">Välj Produkt</option>
-            {products
-              .slice() // Create a copy of the original array to avoid mutating it
-              .sort((a, b) => {
-                if (!a.productname || !b.productname) return 0; // Handle cases where name is undefined or null
-                return a.productname.localeCompare(b.productname);
-              }) // Sort customers alphabetically by name
-              .map((product) => (
-                <option key={product._id} value={product._id}>
-                  {product.productname}
-                </option>
-              ))}
-          </select>
-        </div>
-
-  {/*   
+          {/*   
         <input
           type="text"
           id="productname"
@@ -321,17 +329,13 @@ function InvoiceForm() {
           placeholder="Ange Pris"
         />
 */}
-      </form>
+        </form>
 
 
-      {/****  PRINT*****/}
-      <div>
-        <dt>&nbsp;</dt>
-        <button onClick={handlePrint} >Utskrift!    <dt>&nbsp;</dt>    <dt>&nbsp;</dt>  </button>
-      </div>
 
-      {/************************************************** START PÅ TEMPLATE  ***********************************/}
-      <div class="container invoice">
+
+        {/************************************************** START PÅ TEMPLATE  ***********************************/}
+        {/* <div class="container invoice">*/}
         <div class="invoice-header">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
           <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
@@ -343,11 +347,11 @@ function InvoiceForm() {
               placeholder="Ange Produkt"
               type="text"
               name="productname"
-          
-             value=  {product.productname } //star2
-            
-               
-          
+
+              value={product.productname} //star2
+
+
+
               onChange={handleInputChange}
               required
             />
@@ -380,8 +384,10 @@ function InvoiceForm() {
             </div>
           </label>
 
+
+
           <div className="form-group">
-            <label htmlFor="fee">Ange Moms:</label>
+            <label htmlFor="fee"></label>
             <select
               id="moms"
               value={moms}

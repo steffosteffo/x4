@@ -105,7 +105,7 @@ function App() {
       ) : (
         <>
           <h1>Fakturering</h1>
-          <p>Welcome, {loggedInUser?.steffoname}!</p>
+          <p>Välkommen, {loggedInUser?.steffoname}!</p>
           <button onClick={handleLogout}>Logga ut</button>
           <div>
             <button onClick={() => handleSelectForm('customer')}>Registrera Kund</button>
