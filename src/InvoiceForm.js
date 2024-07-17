@@ -246,7 +246,7 @@ function InvoiceForm() {
               ))}
           </select>
         </div>
-   
+      {/* 
         <input
           type="text"
           id="name"
@@ -283,7 +283,7 @@ function InvoiceForm() {
           onChange={(e) => setWebadress(e.target.value)}
           placeholder="Ange Webbadress"
         />
-
+*/}
       </form>
 
 
@@ -304,6 +304,8 @@ function InvoiceForm() {
               ))}
           </select>
         </div>
+
+  {/*   
         <input
           type="text"
           id="productname"
@@ -318,7 +320,7 @@ function InvoiceForm() {
           onChange={(e) => setPris(e.target.value)}
           placeholder="Ange Pris"
         />
-
+*/}
       </form>
 
 
