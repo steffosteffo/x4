@@ -227,34 +227,33 @@ function InvoiceForm() {
     <div>
 
       <h2>Fakturera till Kund:</h2>
-
       <div class="container invoice">
         {/****  PRINT*****/}
         <div>
           <dt>&nbsp;</dt>
           <button onClick={handlePrint} >Utskrift!  </button>
         </div>
-        <br></br>
 
-        {/*<form onSubmit={handleSubmit}>*/}
-        <form >
-          <div>
-            <select className="form-input" value={selectedCustomer} onChange={(e) => handleSelectCustomer(e.target.value)}>
-              <option type="text" value="">Välj Kund</option>
-              {customers
-                .slice() // Create a copy of the original array to avoid mutating it
-                .sort((a, b) => {
-                  if (!a.name || !b.name) return 0; // Handle cases where name is undefined or null
-                  return a.name.localeCompare(b.name);
-                }) // Sort customers alphabetically by name
-                .map((customer) => (
-                  <option key={customer._id} value={customer._id}>
-                    {customer.name}
-                  </option>
-                ))}
-            </select>
-          </div>
-          {/* 
+
+      {/*<form onSubmit={handleSubmit}>*/}
+      <form >
+        <div>
+          <select className="form-input" value={selectedCustomer} onChange={(e) => handleSelectCustomer(e.target.value)}>
+            <option type="text" value="">Välj Kund</option>
+            {customers
+              .slice() // Create a copy of the original array to avoid mutating it
+              .sort((a, b) => {
+                if (!a.name || !b.name) return 0; // Handle cases where name is undefined or null
+                return a.name.localeCompare(b.name);
+              }) // Sort customers alphabetically by name
+              .map((customer) => (
+                <option key={customer._id} value={customer._id}>
+                  {customer.name}
+                </option>
+              ))}
+          </select>
+        </div>
+        {/* 
         <input
           type="text"
           id="name"
@@ -292,28 +291,28 @@ function InvoiceForm() {
           placeholder="Ange Webbadress"
         />
 */}
-        </form>
+      </form>
 
-        <br></br>
-        <form >
-          <div>
-            <select className="form-input" value={selectedProduct} onChange={(e) => handleSelectProduct(e.target.value)}>
-              <option type="text" value="">Välj Produkt</option>
-              {products
-                .slice() // Create a copy of the original array to avoid mutating it
-                .sort((a, b) => {
-                  if (!a.productname || !b.productname) return 0; // Handle cases where name is undefined or null
-                  return a.productname.localeCompare(b.productname);
-                }) // Sort customers alphabetically by name
-                .map((product) => (
-                  <option key={product._id} value={product._id}>
-                    {product.productname}
-                  </option>
-                ))}
-            </select>
-          </div>
 
-          {/*   
+      <form >
+        <div>
+          <select className="form-input" value={selectedProduct} onChange={(e) => handleSelectProduct(e.target.value)}>
+            <option type="text" value="">Välj Produkt</option>
+            {products
+              .slice() // Create a copy of the original array to avoid mutating it
+              .sort((a, b) => {
+                if (!a.productname || !b.productname) return 0; // Handle cases where name is undefined or null
+                return a.productname.localeCompare(b.productname);
+              }) // Sort customers alphabetically by name
+              .map((product) => (
+                <option key={product._id} value={product._id}>
+                  {product.productname}
+                </option>
+              ))}
+          </select>
+        </div>
+
+        {/*   
         <input
           type="text"
           id="productname"
@@ -329,13 +328,13 @@ function InvoiceForm() {
           placeholder="Ange Pris"
         />
 */}
-        </form>
+      </form>
 
 
+     
 
-
-        {/************************************************** START PÅ TEMPLATE  ***********************************/}
-        {/* <div class="container invoice">*/}
+      {/************************************************** START PÅ TEMPLATE  ***********************************/}
+      {/* <div class="container invoice">*/}
         <div class="invoice-header">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
           <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
@@ -387,7 +386,7 @@ function InvoiceForm() {
 
 
           <div className="form-group">
-            <label htmlFor="fee"></label>
+            <label htmlFor="fee">Moms:</label>
             <select
               id="moms"
               value={moms}
