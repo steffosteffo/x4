@@ -41,7 +41,8 @@ function InvoiceForm() {
   const fetchCustomers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/customers');
+      //const response = await axios.get('/api/customers');
+      const response = await axios.get('http://steffohost.hopto.org:5000/api/customers');
       setCustomers(response.data);
       setLoading(false);
       
@@ -55,7 +56,8 @@ function InvoiceForm() {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/products');
+      //const response = await axios.get('/api/products');
+      const response = await axios.get('http://steffohost.hopto.org:5000/api/products');
       setProducts(response.data);
       setLoading(false);
     } catch (error) {
