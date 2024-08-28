@@ -108,7 +108,7 @@ button {
 
 button:hover {
 
-  background-color: #5ff432;
+  background-color: #7FBA00;
 
  /*  background-color: #0056b3; Change background color on hover */
 }
@@ -200,7 +200,7 @@ body {
   padding: 15px;
   font-size: 0.9em;
   text-align: center;
-  color: #1f4bea;
+  color: #00a2ed;
 }
 
 
