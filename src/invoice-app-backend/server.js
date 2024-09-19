@@ -26,11 +26,11 @@ const corsOpt = {
     'http://steffohost.hopto.org:5000/api/customers',
     'http://steffohost.hopto.org:3000/api/customers',
     'http://steffohost.hopto.org:3000', 
-    'http://85.227.208.203:3000',
+    'http://85.227.215.96:3000',
     'http://localhost:3000',
     'http://localhost:5000',
-    'http://85.227.208.203:5000/api/customers',
-    'http://85.227.208.203:5000/api/users',
+    'http://85.227.215.96:5000/api/customers',
+    'http://85.227.215.96:5000/api/users',
     
     
    // process.env.CUSTOMER_API_1,

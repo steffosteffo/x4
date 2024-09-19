@@ -440,11 +440,11 @@ function InvoiceForm() {
                       <dt>Telefon:</dt>
                       <dd>070-123123</dd>
                       <dt>Address</dt>
-                      <dd> Box 123 123 12 KARLSKRONA</dd>
+                      <dd>Box 123 12 KARLSKRONA</dd>
                       <dt>E-post:</dt>
                       <dd>martinforetagAB@gmail.com</dd>
                       <dt>Webbplats:</dt>
-                      <dd className="mono">http://www.martinforetagab.se</dd>
+                      <dd className="mono">www.martinforetag.se</dd>
 
 
 
