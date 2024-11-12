@@ -106,6 +106,7 @@ star 3 */
   const port = 5000;
   app.listen(port,'0.0.0.0', () => {
   console.log(`Server is running on port ${port}`);
+  console.log('Server running on port', port); // Make sure `port` is a number or string.
 });
 
 
