@@ -35,7 +35,7 @@ const Email = () => {
                     required
                 />
                 <input
-                    type="text"
+                    type="text "
                     placeholder="Subject"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
