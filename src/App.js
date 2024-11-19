@@ -108,11 +108,11 @@ function App() {
           <p>Välkommen, {loggedInUser?.steffoname}!</p>
           <button onClick={handleLogout}>Logga ut</button>
           <div>
-            <button onClick={() => handleSelectForm('customer')}>Registrera Kund</button>
-            <button onClick={() => handleSelectForm('editCustomer')}>Ändra Kund</button>
-            <button onClick={() => handleSelectForm('Product')}>Registerera Produkt</button>
-            <button onClick={() => handleSelectForm('editProduct')}>Ändra Produkt</button>
-            <button onClick={() => handleSelectForm('invoice')}>Fakturera till Kund</button>
+            <button onClick={() => handleSelectForm('customer')}>Registrera Kund1</button>
+            <button onClick={() => handleSelectForm('editCustomer')}>Ändra Kund2</button>
+            <button onClick={() => handleSelectForm('Product')}>Registerera Produkt3</button>
+            <button onClick={() => handleSelectForm('editProduct')}>Ändra Produkt4</button>
+            <button onClick={() => handleSelectForm('invoice')}>Fakturera till Kund5</button>
           </div>
           {selectedForm === 'Email' && <Email />}
           {selectedForm === 'customer' && <CustomerForm />}
