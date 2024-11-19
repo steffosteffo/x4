@@ -17,7 +17,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 // EMAIL END //////////
 
-
+//http://steffohost.hopto.org:3000/x4
 const corsOpt = {
   origin: [
     'http://steffohost.hopto.org:5000',
@@ -68,7 +68,7 @@ mongoose.connect('mongodb+srv://root:root@books-store-mern.ipulw5t.mongodb.net/s
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', function() {
-  console.log('Connected to MongoDB');
+  console.log('Connected to MongoDB steffo 19 nov');
 });
 
 
