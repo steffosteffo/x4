@@ -21,17 +21,17 @@ app.use(bodyParser.json());
 const corsOpt = {
   origin: [
     'http://steffohost.hopto.org:5000',
-    'http://85.227.215.171:5000', 
+    'http://192.168.10.162:5000', 
     'http://steffohost.hopto.org:3000/api/anames',
     'http://steffohost.hopto.org:5000/api/anames',
     'http://steffohost.hopto.org:5000/api/customers',
     'http://steffohost.hopto.org:3000/api/customers',
     'http://steffohost.hopto.org:3000', 
-    'http://85.227.215.171:3000',
+    'http://192.168.10.162:3000',
     'http://localhost:3000',
     'http://localhost:5000',
-    'http://85.227.215.171:5000/api/customers',
-    'http://85.227.215.171:5000/api/users',
+    'http://192.168.10.162:5000/api/customers',
+    'http://192.168.10.162:5000/api/users',
     
     
    // process.env.CUSTOMER_API_1,
