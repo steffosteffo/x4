@@ -32,6 +32,8 @@ const corsOpt = {
     'http://localhost:5000',
     'http://192.168.10.162:5000/api/customers',
     'http://192.168.10.162:5000/api/users',
+            
+    
     
     
    // process.env.CUSTOMER_API_1,
