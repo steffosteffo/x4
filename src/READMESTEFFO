@@ -1,12 +1,12 @@
 /*
 
 === FRONTEND: ===
-PS C:\Dev\invoice-app-frontend> npm start 
+C:\Dev\Ver3\invoice-app-frontend> npm start 
 
 
 
 === BACKEND: ==== 
-C:\Dev\invoice-app-frontend\src\invoice-app-backend> npm start
+C:\Dev\Ver3\invoice-app-frontend\src\invoice-app-backend> npm start
 
 > invoice-app-backend@1.0.0 start
 > node server.js
