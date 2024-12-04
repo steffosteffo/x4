@@ -13,7 +13,9 @@ function LoginForm({ onLogin, onLogout }) {
       console.log('Fetching users from the database...');
      // const usersResponse = await axios.get('http://localhost:5000/api/anames');
       const usersResponse = await axios.get('http://steffohost.hopto.org:5000/api/anames');
-      
+      console.log('AFTER Fetching users-------');
+
+
         const users = usersResponse.data;
       console.log('Users fetched:', users);
 
